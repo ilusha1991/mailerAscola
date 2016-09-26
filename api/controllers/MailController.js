@@ -5,6 +5,10 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+var nodemailer = require('nodemailer');
+var sesTransport = require('nodemailer-ses-transport');
+
+
 module.exports = {
 	
 
@@ -13,6 +17,7 @@ module.exports = {
    * `MailController.sendOne()`
    */
   sendOne: function (req, res) {
+
     return res.json({
       todo: 'sendOne() is not implemented yet!'
     });
@@ -22,10 +27,19 @@ module.exports = {
   /**
    * `MailController.sendBulk()`
    */
-  sendBulk: function (req, res) {
-    return res.json({
-      todo: 'sendBulk() is not implemented yet!'
-    });
-  }
+    sendBulk: function (req, res) {
+ 	  
+	MailerService.sendMail(req.body , function(err,data){
+                if (err) {
+          	       console.log(err);
+		       return res.serverError();
+        	}else{
+	        	console.log(data);
+	        	return res.ok();
+         	}  
+     
+           
+	})
+    }
 };
 
