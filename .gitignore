@@ -97,6 +97,7 @@ lib-cov
 *.out
 *.pid
 npm-debug.log
+ssh.sh
 
 
 
@@ -116,3 +117,4 @@ npm-debug.log
 nbproject
 .idea
 .node_history
+ssh.sh
