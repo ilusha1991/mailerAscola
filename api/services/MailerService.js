@@ -25,7 +25,7 @@ module.exports = {
     sendMail: function (arr,cb) {
        	if(!arr)
 	{
-		return cb("no input arr");
+		return cb("no input arr, expected [{to,from,jubject,html},{}]");
 	} 
 	for(let i=0 ; i<arr.length ; i++){
 	     var mailOptions = {
