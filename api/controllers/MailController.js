@@ -32,10 +32,10 @@
     MailerService.sendMail(req.body , function(err,data){
       if (err) {
         console.log(err);
-        return res.serverError();
+        return res.send(err);
       }else{
         console.log(data);
-        return res.ok();
+        return res.send(data);
       }  
     });
   }
