@@ -30,6 +30,7 @@
    sendBulk: function (req, res) {
 
     MailerService.sendMail(req.body , function(err,data){
+      console.log(req.body);
       if (err) {
         console.log(err);
         return res.send(err);
